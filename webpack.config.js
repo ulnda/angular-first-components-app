@@ -14,6 +14,7 @@ var ENV = process.env.npm_lifecycle_event;
 var isProd = ENV === 'build';
 
 module.exports = function getConfig() {
+
   /**
    * Config
    * Reference: http://webpack.github.io/docs/configuration.html
