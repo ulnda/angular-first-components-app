@@ -1,0 +1,33 @@
+{
+  "name": "angular-first-components-app",
+  "version": "1.0.0",
+  "description": "Simple Angular 1.* app with components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ulnda/angular-first-components-app.git"
+  },
+  "author": "ulnda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ulnda/angular-first-components-app/issues"
+  },
+  "homepage": "https://github.com/ulnda/angular-first-components-app#readme",
+  "dependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.26.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.24.1",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
