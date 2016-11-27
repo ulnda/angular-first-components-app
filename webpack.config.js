@@ -4,7 +4,7 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 /**
  * Env
@@ -13,7 +13,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ENV = process.env.npm_lifecycle_event;
 var isProd = ENV === 'build';
 
-module.exports = function makeWebpackConfig () {
+module.exports = function getConfig() {
   /**
    * Config
    * Reference: http://webpack.github.io/docs/configuration.html
@@ -147,11 +147,12 @@ module.exports = function makeWebpackConfig () {
       // Minify all javascript, switch loaders to minimizing mode
       new webpack.optimize.UglifyJsPlugin(),
 
-      // Copy assets from the public folder
-      // Reference: https://github.com/kevlened/copy-webpack-plugin
-      new CopyWebpackPlugin([{
-        from: __dirname + '/src/public'
-      }])
+      // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
+      // Clean some output folder before building
+      new CleanWebpackPlugin(config.output.path, {
+        verbose: true,
+        dry: false
+      })
     )
   }
 
